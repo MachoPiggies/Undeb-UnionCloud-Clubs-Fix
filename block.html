@@ -53,6 +53,12 @@
   color: #000;
 }
 
+  /* Fixes an inconsistency where hyperlinks would have a different size and contain an underline if they were specifically placed in the white sidebar */
+.tree-navigation a {
+    font-size: unset;
+    text-decoration: none;
+}
+
 /* Fixes an issue where page titles for pages added to the white sidebar would appear white (on white) and not correctly positioned - it's a bit of a janky fix but it works */
 .tree-navigation .page-title {
   color: #000;
@@ -97,6 +103,11 @@
 /* Automatically aligns text to left on slider text to make it more readable */
 .uc-slider-wrapper .uc-slider-banner p {
   text-align: left;
+}
+
+/* Fixes an inconsistency with hyperlinks where they'd change colour when visited */
+a, a:visited {
+  color: var(--default-orange);
 }
 
 /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
