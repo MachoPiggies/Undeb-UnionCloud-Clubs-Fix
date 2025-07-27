@@ -1,0 +1,48 @@
+<!-- Disclaimer for content box so people don't delete it -->
+<p style="text-align: center;">&nbsp;</p>
+
+<p id="css-admin-disclaimer" style="text-align: center;"><span style="color:#000000;">This element is only showing to admins in edit mode, please do not delete this block as it's fixing the functionality of the page using scripts. It's currently being maintained <a href="https://github.com/MachoPiggies/Undeb-UnionCloud-Clubs-Fix" target="_blank">here</a>!</span></p>
+
+<!-- Below is the actual CSS edits -->
+<style type="text/css">
+
+<!-- Removes a strange bar that would appear alongside the sidebar, but not extend the height of the whole page -->
+.content-wrap.ninecol>div {
+  background: none;
+}
+
+<!-- Fixes an issue where the society/club categories would appear white on white background (invisible) in the sidebar, leaving a strange open space -->
+#uc-groups-details-page .group_left_panel_menu .typeCategory {
+  color: #000;
+  padding-top: 10px;
+}
+
+<!-- Modifies the type of bullets used automatically in the sidebar category system to be more consistent with the rest of the website -->
+#uc-groups-details-page .group_left_panel_menu .typeCategory li {
+  list-style-type: disc;
+}
+
+<!-- Modifies the type of bullets used automatically in the sidebar category system to be black instead of white (white text on white background makes them invisible) -->
+#uc-groups-details-page .group_left_panel_menu .typeCategory li::marker {
+  color: #000;
+}
+
+<!-- Centres the join button for better look, and to stop the button hiding in the sidebar in some cases -->
+#uc-groups-details-page .join-this-group {
+  display: block !important;
+  width: 100%;
+  text-align: center;
+}
+
+  <!-- Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens -->
+@media only screen and (max-width: 767px) {
+  .tab .ui-state-active, .tab .ui-widget-content .ui-state-active, .tab .ui-widget-header .ui-state-active {
+    background: #384352;
+  }
+}
+</style>
+
+<!-- This script is simply deleting the disclaimer for people not in edit mode -->
+<script>
+if (!document.querySelector('.edit-page, .addsectionButton, .tool-bar.pagetoolbar')) document.getElementById("css-admin-disclaimer").remove();
+</script>
