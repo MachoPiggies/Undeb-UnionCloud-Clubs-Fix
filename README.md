@@ -31,7 +31,9 @@ This repository provides a set of front-end fixes and enhancements to help Bango
 This tiny project is maintained by:
 
 **Daniel**
+
 **Bangor University**
+
 📧 dnd23ppj@bangor.ac.uk
 
 ---
