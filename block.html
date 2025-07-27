@@ -37,11 +37,10 @@
   color: #000;
 }
 
-/* Centres the join button for better look, and to stop the button hiding in the sidebar in some cases */
+/* Fixes an issue where the join group button would sometimes hide behind the sidebar */
 #uc-groups-details-page .join-this-group {
   display: block !important;
   width: 100%;
-  text-align: center;
 }
 
 /* CSS-styling for the description box */
@@ -104,6 +103,16 @@
   /* Moves the white sidebar to the top middle of the page so mobile users can actually see the page */
   .module_groups.action_show #uc-groups-details-page {
     display: block;
+  }
+
+  /* Fixes issue where the white sidebar would sometimes appear off-centre depending on screen size */
+  .threecol.left-nav-content.tree-navigation {
+    margin: 10px auto 10px auto;
+  }
+
+  /* Centres the join button to look better on mobile */
+  #uc-groups-details-page .join-this-group {
+    text-align: center;
   }
 }
 </style>
