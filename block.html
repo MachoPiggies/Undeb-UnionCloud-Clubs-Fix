@@ -6,6 +6,16 @@
 <!-- Below is the actual CSS edits -->
 <style type="text/css">
 
+/* Fixes an issue with the pink topbar where it doesn't extend Y-ways correctly on smaller screens */
+.uc-mega-menu .uc-mega-menu-wrapper {
+  height: 100%;
+}
+
+/* Relates to the above fix */
+.uc-mega-menu .uc-mm-level-one.hover .uc-sub-mega-menu {
+  top: 100%;
+}
+  
 /* Removes a strange bar that would appear alongside the sidebar, but not extend the height of the whole page */
 .content-wrap.ninecol>div {
   background: none;
