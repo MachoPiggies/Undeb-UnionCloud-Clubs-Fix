@@ -9,7 +9,6 @@ This repository provides a set of front-end fixes and enhancements to help Bango
 - Fixes UI bugs across the societies' pages
 - Fixes some layout inconsistencies that are either broken by UnionCloud or incorrectly set up by Undeb
 - Fixes some issues with certain modules (Tab content, Slider etc)
-- Gives additional preferences for things that currently can't be edited (buttons in the sidebar, the join button location, description under the title of the group)
 - Much better mobile layout
 
 ---
