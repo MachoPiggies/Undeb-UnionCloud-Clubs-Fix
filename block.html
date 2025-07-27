@@ -46,8 +46,20 @@
 
 /* CSS-styling for the description box */
 .tree-navigation .description {
-  color: #000;
   padding: 25px 10px 10px 35px;
+}
+
+/* Fixes an issue where page text on the white side panel defaulted to white (on white) */
+.tree-navigation {
+  color: #000;
+}
+
+/* Fixes an issue where page titles for pages added to the white sidebar would appear white (on white) and not correctly positioned - it's a bit of a janky fix but it works */
+.tree-navigation .page-title {
+  color: #000;
+  padding: 0 10px 10px 35px;
+  font-size: larger;
+  font-weight: bold;
 }
 
 /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
