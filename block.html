@@ -57,9 +57,11 @@
 /* Fixes an issue where page titles for pages added to the white sidebar would appear white (on white) and not correctly positioned - it's a bit of a janky fix but it works */
 .tree-navigation .page-title {
   color: #000;
-  padding: 0 10px 10px 35px;
+  padding: 0 10px 10px 20px;
   font-size: larger;
   font-weight: bold;
+  top: 10px;
+  position: relative;
 }
 
 /* Fixes an issue where the content of tabs would by default appear black (on black) & the text size would appear smaller than intended */
@@ -85,6 +87,12 @@
 /* Fixes an issue where tab content automatic colour would overwrite URL colour */
 .content-wrap .tab .tab-content a {
   color: var(--default-orange);
+}
+
+/* Locks the white sidebar to the max size of all pages within it to stop it moving and messing up some browsers */
+.module_groups.action_show .threecol.tree-navigation {
+  height: 100%;
+  padding-bottom: 10px;
 }
 
 /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
