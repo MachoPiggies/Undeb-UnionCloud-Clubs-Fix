@@ -94,6 +94,11 @@
   padding-bottom: 10px;
 }
 
+/* Automatically aligns text to left on slider text to make it more readable */
+.uc-slider-wrapper .uc-slider-banner p {
+  text-align: left;
+}
+
 /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
 @media only screen and (max-width: 767px) {
   .tab .ui-state-active, .tab .ui-widget-content .ui-state-active, .tab .ui-widget-header .ui-state-active {
@@ -113,6 +118,17 @@
   /* Centres the join button to look better on mobile */
   #uc-groups-details-page .join-this-group {
     text-align: center;
+  }
+
+  /* Cuts off unnecessary slider spacing for text on slider images */
+  .uc-slider-banner-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Reduces unnecessary slider spacing for text on slider images */
+  .uc-slider-wrapper .uc-slider-banner p {
+    padding: 5px;
   }
 }
 </style>
