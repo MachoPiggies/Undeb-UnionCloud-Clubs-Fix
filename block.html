@@ -66,6 +66,25 @@
 .content-wrap .tab .tab-content {
   color: #fff;
   font-size: 16px;
+  line-height: 1em;
+}
+
+/* Fixes an issue where bullets in the content of tabs would appear black (on black) */
+.content-wrap .tab .tab-content li::marker {
+  color: #fff;
+}
+
+/* Fixes an issue where bullet or numbered lists would appear oddly in the content of tabs */
+.content-wrap .tab .tab-content ul,
+.content-wrap .tab .tab-content ol {
+  margin-left: 0;
+  padding-left: 1em;
+  list-style-position: inside;
+}
+
+/* Fixes an issue where tab content automatic colour would overwrite URL colour */
+.content-wrap .tab .tab-content a {
+  color: var(--default-orange);
 }
 
 /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
@@ -121,4 +140,7 @@
       continue;
     }
   }
+
+  // Point of contact if the SU or UnionCloud go after anyone using this script
+  console.log("The script used to fix various issues with the clubs pages has been created by Daniel (500644299), you can see it here https://github.com/MachoPiggies/Undeb-UnionCloud-Clubs-Fix");
 </script>
