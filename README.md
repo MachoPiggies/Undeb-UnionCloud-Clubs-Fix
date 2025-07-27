@@ -27,7 +27,7 @@ This repository provides a set of front-end fixes and enhancements to help Bango
 
 ## ✍️ Author
 
-This tiny project is maintained by:
+This tiny project was originally created for the Bangor University Tennis Club and is maintained by:
 
 **Daniel**  
 
