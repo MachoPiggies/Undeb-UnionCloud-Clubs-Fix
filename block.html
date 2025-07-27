@@ -81,4 +81,10 @@
       }
     }
   }, 1);
+
+  // Stops the pink topbar options from showing a dropdown pane if there's nothing inside it
+  for (const pane of document.querySelectorAll(".uc-sub-mega-menu")) {
+    if (pane.children.length > 0) continue;
+    pane.remove();
+  }
 </script>
