@@ -34,6 +34,12 @@
   text-align: center;
 }
 
+/* CSS-styling for the description box */
+.tree-navigation .description {
+  color: #000;
+  padding: 25px 10px 10px 35px;
+}
+
 /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
 @media only screen and (max-width: 767px) {
   .tab .ui-state-active, .tab .ui-widget-content .ui-state-active, .tab .ui-widget-header .ui-state-active {
@@ -44,5 +50,25 @@
 
 <!-- This script is simply deleting the disclaimer for people not in edit mode -->
 <script>
-if (!document.querySelector('.edit-page, .addsectionButton, .tool-bar.pagetoolbar')) document.getElementById("css-admin-disclaimer").remove();
+  // Deletes the disclaimer for people not in edit mode
+  if (!document.querySelector('.edit-page, .addsectionButton, .tool-bar.pagetoolbar')) document.getElementById("css-admin-disclaimer").remove();
+
+  // Adds the description element back to the sidebar
+  setTimeout(function() {
+    const groupPanel = document.querySelector("#uc-groups-details-page .group_left_panel_menu");
+    const portlet = document.querySelector("#uc-groups-details-page .portlet");
+    if (groupPanel && !portlet) {
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+      const content = ogDescription ? ogDescription.content : null;
+      
+      if (content) {
+        const div = document.createElement("div");
+        div.className = "description";
+        div.textContent = content;
+    
+        const firstUl = groupPanel.querySelector("ul");
+        groupPanel.insertBefore(div, firstUl);
+      }
+    }
+  }, 1000);
 </script>
