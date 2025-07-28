@@ -21,7 +21,7 @@
   background: none;
 }
 
-/* Fixes an issue where the society/club categories would appear white on white background (invisible) in the sidebar, leaving a strange open space*/
+/* Fixes an issue where the society/club categories would appear white on white background (invisible) in the sidebar, leaving a strange open space */
 #uc-groups-details-page .group_left_panel_menu .typeCategory {
   color: #000;
   padding-top: 10px;
@@ -110,6 +110,21 @@ a, a:visited {
   color: var(--default-orange);
 }
 
+/* Styling for the mobile sidebar dropdown button */
+.tree-navigation .title button {
+  display: none;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  height: 30px;
+  width: 30px;
+}
+
+/* Adds a dropdown hide class, if we just hide the display, making things reappear if the screen size changes would be more difficult than needed */
+.tree-navigation .dropdown-hide {
+  display: block;
+}
+
 /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
 @media only screen and (max-width: 767px) {
   .tab .ui-state-active, .tab .ui-widget-content .ui-state-active, .tab .ui-widget-header .ui-state-active {
@@ -140,6 +155,21 @@ a, a:visited {
   /* Reduces unnecessary slider spacing for text on slider images */
   .uc-slider-wrapper .uc-slider-banner p {
     padding: 5px;
+  }
+
+  /* Modifies the title element in the white sidebar to work with the dropdown */
+  .tree-navigation .title {
+    position: relative;
+  }
+
+  /* Shows the sidebar toggle button for mobile users */
+  .tree-navigation .title button {
+    display: block;
+  }
+
+  /* Hider for the sidebar toggle button */
+  .tree-navigation .dropdown-hide {
+    display: none;
   }
 }
 </style>
@@ -189,6 +219,39 @@ a, a:visited {
       continue;
     }
   }
+
+  // Functionality for the white sidebar dropdown
+  const title = document.querySelector(".group_left_panel_menu .title");
+  if (title) {
+  const btn = document.createElement("button");
+  btn.class = "mobile-toggle-btn";
+  btn.textContent = "▼";
+  btn.onclick = () => {
+    if (btn.textContent === "▼") {
+      const panel = document.querySelector(".group_left_panel_menu") || {children: []};
+      for (const q of panel.children) {
+        if (q.classList.contains("title")) continue;
+        q.classList.add("dropdown-hide");
+      }
+      
+      const sections = document.querySelector(".threecol.left-nav-content.tree-navigation .section.list");
+      if (sections) sections.classList.add("dropdown-hide");
+      btn.textContent = "▲";
+    } else {
+      const panel = document.querySelector(".group_left_panel_menu") || {children: []};
+      for (const q of panel.children) {
+        if (q.classList.contains("title")) continue;
+        q.classList.remove("dropdown-hide");
+      }
+      
+      const sections = document.querySelector(".threecol.left-nav-content.tree-navigation .section.list");
+      if (sections) sections.classList.remove("dropdown-hide");
+      btn.textContent = "▼";
+    }
+  };
+
+  title.appendChild(btn);
+}
 
   // Point of contact if the SU or UnionCloud go after anyone using this script
   console.log("The script used to fix various issues with the clubs pages has been created by Daniel (500644299), you can see it here https://github.com/MachoPiggies/Undeb-UnionCloud-Clubs-Fix");
