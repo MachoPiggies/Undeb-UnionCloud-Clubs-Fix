@@ -6,6 +6,11 @@
 <!-- Below is the actual CSS edits -->
 <style type="text/css">
 
+/* Fixes an issue where on some mobile devices, screen overhang can occur and the black background of the site did not extend to it, causing a bright white line down the right of the page */
+html {
+  background-color: var(--body-fade-color);
+}
+
 /* Fixes an issue with the pink topbar where it doesn't extend Y-ways correctly on smaller screens */
 .uc-mega-menu .uc-mega-menu-wrapper {
   height: 100%;
