@@ -58,7 +58,7 @@ html {
   color: #000;
 }
 
-  /* Fixes an inconsistency where hyperlinks would have a different size and contain an underline if they were specifically placed in the white sidebar */
+/* Fixes an inconsistency where hyperlinks would have a different size and contain an underline if they were specifically placed in the white sidebar */
 .tree-navigation a {
     font-size: unset;
     text-decoration: none;
@@ -130,8 +130,8 @@ a, a:visited {
   display: block;
 }
 
-/* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
 @media only screen and (max-width: 767px) {
+  /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
   .tab .ui-state-active, .tab .ui-widget-content .ui-state-active, .tab .ui-widget-header .ui-state-active {
     background: #384352;
   }
@@ -176,10 +176,14 @@ a, a:visited {
   .tree-navigation .dropdown-hide {
     display: none;
   }
+
+  /* Adds additional spacing to the top of the join button so it doesn't look like it's trying to escape up into the white midbar */
+  .module_groups.action_show #uc-groups-details-page .join-this-group a {
+    margin-top: 50px;
+  }
 }
 </style>
 
-<!-- This script is simply deleting the disclaimer for people not in edit mode -->
 <script>
   // Deletes the disclaimer for people not in edit mode
   if (!document.querySelector('.edit-page, .addsectionButton, .tool-bar.pagetoolbar')) document.getElementById("css-admin-disclaimer").remove();
