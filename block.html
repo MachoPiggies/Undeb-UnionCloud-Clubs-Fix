@@ -130,6 +130,11 @@ a, a:visited {
   display: block;
 }
 
+/* Fixes an issue where the topbar is misaligned on larger screens, causing it to appear squished on one side */
+.header, .menu, .content, .top, .top-union {
+    width: 100%;
+}
+
 @media only screen and (max-width: 767px) {
   /* Fixes an issue with the Tab type container where the active tab title background would disappear on certain smaller screens */
   .tab .ui-state-active, .tab .ui-widget-content .ui-state-active, .tab .ui-widget-header .ui-state-active {
