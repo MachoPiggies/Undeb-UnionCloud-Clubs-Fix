@@ -186,6 +186,16 @@ a, a:visited {
   .module_groups.action_show #uc-groups-details-page .join-this-group a {
     margin-top: 50px;
   }
+
+  /* Fixes an issue on mobile that causes the Undeb logo to be offcentre because some web-dev added padding way too far up */
+  .bottom .column-content, .bottom-union .column-content, .bottom-subsite .column-content {
+    padding: 0;
+  }
+  
+  /* Fixes an issue caused by the above fix that causes bullets in the footer to appear too far left, appearing to hang off the page */
+  .footer-content-container {
+    padding-left: 1em;
+  }
 }
 </style>
 
